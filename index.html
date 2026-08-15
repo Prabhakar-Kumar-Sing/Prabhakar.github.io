@@ -44,11 +44,26 @@
   @media (max-width:780px){ nav ul{display:none;} }
 
   header.hero{padding:150px 0 70px; position:relative;}
+  .hero-top{display:grid; grid-template-columns:1fr 220px; gap:44px; align-items:start;}
   .kicker{font-family:'IBM Plex Mono', monospace; font-size:.8rem; color:var(--accent); text-transform:uppercase; letter-spacing:.08em; margin-bottom:18px;}
   .hero h1{font-size:clamp(2rem,4.4vw,3.2rem); font-weight:500; line-height:1.1; margin-bottom:10px;}
   .hero .role{font-size:1.15rem; color:var(--ink-soft); margin-bottom:22px;}
   .hero p.lede{max-width:64ch; color:var(--ink); margin-bottom:24px;}
   .hero-links a{font-size:.88rem; text-decoration:underline; color:var(--accent);}
+  .portrait{
+    width:220px; height:220px; border-radius:2px; overflow:hidden;
+    border:1px solid var(--line); background:var(--surface);
+    display:flex; align-items:center; justify-content:center;
+    flex-shrink:0;
+  }
+  .portrait img{width:100%; height:100%; object-fit:cover; display:block;}
+  .portrait .placeholder-text{font-family:'IBM Plex Mono', monospace; font-size:.72rem; color:var(--ink-soft); text-align:center; padding:14px;}
+  @media (max-width:780px){ .hero-top{grid-template-columns:1fr;} .portrait{width:140px; height:140px;} }
+
+  .video-frame{
+    position:relative; width:100%; padding-top:56.25%; border:1px solid var(--line); background:var(--surface); overflow:hidden;
+  }
+  .video-frame iframe{position:absolute; inset:0; width:100%; height:100%; border:0;}
 
   .grain{
     width:100%; height:220px; margin-top:40px; border-radius:2px;
@@ -125,6 +140,7 @@
     <div class="brand">P. K. Singh</div>
     <ul>
       <li><a href="#research">Research</a></li>
+      <li><a href="#experiment">Video</a></li>
       <li><a href="#publications">Publications</a></li>
       <li><a href="#patents">Patents</a></li>
       <li><a href="#cv">CV</a></li>
@@ -135,11 +151,19 @@
 
 <header class="hero">
   <div class="wrap">
-    <div class="kicker">Indian Institute of Technology Patna</div>
-    <h1>Prabhakar Kumar Singh</h1>
-    <div class="role">Researcher — Solid-State Additive Manufacturing</div>
-    <p class="lede">I develop solid-state additive manufacturing routes for lightweight alloys — Powder Bed Friction Stir (PBFS) deposition of magnesium and hybrid friction stir-based additive manufacturing of aluminum. My work spans process development, tool design and thermo-mechanical processing, linking processing to microstructure, mechanical performance and corrosion behaviour.</p>
-    <div class="hero-links"><a href="https://scholar.google.com/citations?user=FwstBLgAAAAJ" target="_blank" rel="noopener">Google Scholar profile →</a></div>
+    <div class="hero-top">
+      <div>
+        <div class="kicker">Indian Institute of Technology Patna</div>
+        <h1>Prabhakar Kumar Singh</h1>
+        <div class="role">Researcher — Solid-State Additive Manufacturing</div>
+        <p class="lede">I develop solid-state additive manufacturing routes for lightweight alloys — Powder Bed Friction Stir (PBFS) deposition of magnesium and hybrid friction stir-based additive manufacturing of aluminum. My work spans process development, tool design and thermo-mechanical processing, linking processing to microstructure, mechanical performance and corrosion behaviour.</p>
+        <div class="hero-links"><a href="https://scholar.google.com/citations?user=FwstBLgAAAAJ" target="_blank" rel="noopener">Google Scholar profile →</a></div>
+      </div>
+      <div class="portrait">
+        <!-- Replace src below with your photo filename once uploaded, e.g. <img src="profile.jpg" alt="Prabhakar Kumar Singh"> -->
+        <div class="placeholder-text">[Add your photo here — see README]</div>
+      </div>
+    </div>
     <div class="grain" aria-hidden="true"></div>
     <div class="stat-row">
       <div><span class="n">78</span><span class="l">Citations</span></div>
@@ -169,6 +193,15 @@
         <p>FE-SEM, EBSD, TEM, XCT, XRD, residual stress and corrosion analysis, combined with thermal-history monitoring and MATLAB-based XCT quantification of defects.</p>
         <div class="tag-row"><span class="tag">EBSD</span><span class="tag">XCT + MATLAB</span><span class="tag">Residual stress</span></div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section id="experiment">
+  <div class="wrap">
+    <div class="section-head"><div class="kicker">In the lab</div><h2>PBFS process in action</h2></div>
+    <div class="video-frame">
+      <iframe src="https://www.youtube.com/embed/_W5eGAWvjfQ" title="PBFS additive manufacturing process demonstration" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
     </div>
   </div>
 </section>
