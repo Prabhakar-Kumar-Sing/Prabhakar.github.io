@@ -3,419 +3,171 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Prabhakar Kr. Singh — Materials & Additive Manufacturing Research</title>
-<meta name="description" content="Prabhakar Kr. Singh — PhD Candidate, Mechanical Engineering, IIT Patna. Research on powder bed friction stir additive manufacturing of magnesium alloys.">
+<title>Prabhakar Kumar Singh — Solid-State Additive Manufacturing</title>
+<meta name="description" content="Prabhakar Kumar Singh — Researcher in powder bed friction stir (PBFS) additive manufacturing of magnesium and aluminium alloys. Publications, patents, and characterisation expertise.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#E6E3DA;
-    --surface:#F3F1EA;
-    --ink:#1F241F;
-    --ink-soft:#5C6058;
-    --heat:#C1440E;
-    --heat-soft:#C1440E22;
-    --oxide:#3A6B5F;
-    --line:#C9C4B5;
-    --max:1080px;
+    --bg:#FAF9F6;
+    --surface:#FFFFFF;
+    --ink:#17181A;
+    --ink-soft:#63666B;
+    --line:#E4E2DB;
+    --accent:#8A6D4A;
+    --max:1040px;
   }
   *{box-sizing:border-box; margin:0; padding:0;}
   html{scroll-behavior:smooth;}
   body{
-    background:var(--bg);
-    color:var(--ink);
-    font-family:'Source Serif 4', Georgia, serif;
-    font-size:17px;
-    line-height:1.6;
+    background:var(--bg); color:var(--ink);
+    font-family:'Inter', sans-serif;
+    font-size:16px; line-height:1.65;
     -webkit-font-smoothing:antialiased;
   }
   @media (prefers-reduced-motion: reduce){
-    *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; scroll-behavior:auto !important;}
+    *{animation-duration:.01ms !important; transition-duration:.01ms !important; scroll-behavior:auto !important;}
   }
-  h1,h2,h3,.display{
-    font-family:'Space Grotesk', sans-serif;
-    letter-spacing:-0.01em;
-  }
-  .mono{
-    font-family:'IBM Plex Mono', monospace;
-    letter-spacing:0.02em;
-  }
+  h1,h2,h3,.serif{font-family:'Fraunces', serif;}
+  .mono{font-family:'IBM Plex Mono', monospace;}
   a{color:inherit;}
-  :focus-visible{outline:2px solid var(--heat); outline-offset:3px;}
-
+  :focus-visible{outline:2px solid var(--accent); outline-offset:3px;}
   .wrap{max-width:var(--max); margin:0 auto; padding:0 28px;}
 
-  /* NAV */
-  nav{
-    position:fixed; top:0; left:0; right:0; z-index:50;
-    background:var(--bg)ee;
-    backdrop-filter:blur(6px);
-    border-bottom:1px solid var(--line);
-  }
-  nav .wrap{
-    display:flex; align-items:center; justify-content:space-between;
-    height:64px;
-  }
-  .brand{
-    font-family:'Space Grotesk', sans-serif;
-    font-weight:700; font-size:1.05rem;
-    display:flex; align-items:center; gap:8px;
-  }
-  .brand .mark{
-    width:10px; height:10px; background:var(--heat); display:inline-block;
-    border-radius:1px;
-  }
-  nav ul{
-    list-style:none; display:flex; gap:28px;
-  }
-  nav a{
-    text-decoration:none;
-    font-family:'IBM Plex Mono', monospace;
-    font-size:0.82rem;
-    text-transform:uppercase;
-    letter-spacing:0.06em;
-    color:var(--ink-soft);
-    transition:color .2s;
-  }
-  nav a:hover{color:var(--heat);}
-  .nav-toggle{display:none;}
+  nav{position:fixed; top:0; left:0; right:0; z-index:50; background:var(--bg)ee; backdrop-filter:blur(6px); border-bottom:1px solid var(--line);}
+  nav .wrap{display:flex; align-items:center; justify-content:space-between; height:62px;}
+  .brand{font-family:'Fraunces', serif; font-weight:600; font-size:1.05rem;}
+  nav ul{list-style:none; display:flex; gap:26px;}
+  nav a{text-decoration:none; font-size:.85rem; color:var(--ink-soft); transition:color .2s;}
+  nav a:hover{color:var(--accent);}
+  @media (max-width:780px){ nav ul{display:none;} }
 
-  /* HERO */
-  header.hero{
-    padding:150px 0 90px;
-    position:relative;
-    overflow:hidden;
-  }
-  .hero-grid{
-    display:grid;
-    grid-template-columns:1.15fr 0.85fr;
-    gap:56px;
-    align-items:center;
-  }
-  .eyebrow{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:0.8rem;
-    color:var(--heat);
-    text-transform:uppercase;
-    letter-spacing:0.1em;
-    margin-bottom:18px;
-    display:flex; align-items:center; gap:10px;
-  }
-  .eyebrow::before{
-    content:''; width:24px; height:1px; background:var(--heat); display:inline-block;
-  }
-  .hero h1{
-    font-size:clamp(2.1rem, 4.2vw, 3.4rem);
-    font-weight:600;
-    line-height:1.08;
-    margin-bottom:20px;
-  }
-  .hero h1 em{
-    font-style:normal; color:var(--oxide);
-  }
-  .hero p.lede{
-    font-size:1.1rem;
-    color:var(--ink-soft);
-    max-width:46ch;
-    margin-bottom:30px;
-  }
-  .hero-cta{display:flex; gap:14px; flex-wrap:wrap;}
-  .btn{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:0.82rem;
-    text-transform:uppercase;
-    letter-spacing:0.06em;
-    text-decoration:none;
-    padding:13px 22px;
-    border:1px solid var(--ink);
-    color:var(--ink);
-    display:inline-block;
-    transition:background .2s, color .2s, border-color .2s;
-  }
-  .btn.primary{
-    background:var(--ink); color:var(--bg);
-  }
-  .btn.primary:hover{background:var(--heat); border-color:var(--heat);}
-  .btn:not(.primary):hover{border-color:var(--heat); color:var(--heat);}
+  header.hero{padding:150px 0 70px; position:relative;}
+  .kicker{font-family:'IBM Plex Mono', monospace; font-size:.8rem; color:var(--accent); text-transform:uppercase; letter-spacing:.08em; margin-bottom:18px;}
+  .hero h1{font-size:clamp(2rem,4.4vw,3.2rem); font-weight:500; line-height:1.1; margin-bottom:10px;}
+  .hero .role{font-size:1.15rem; color:var(--ink-soft); margin-bottom:22px;}
+  .hero p.lede{max-width:64ch; color:var(--ink); margin-bottom:24px;}
+  .hero-links a{font-size:.88rem; text-decoration:underline; color:var(--accent);}
 
-  /* Layer-stack signature graphic */
-  .stack{
-    position:relative;
-    display:flex; flex-direction:column-reverse;
-    gap:6px;
-    height:340px;
-    justify-content:flex-start;
-  }
-  .layer{
-    height:34px;
-    background:var(--surface);
+  .grain{
+    width:100%; height:220px; margin-top:40px; border-radius:2px;
+    background:
+      radial-gradient(circle at 20% 30%, #00000012 0, transparent 40%),
+      radial-gradient(circle at 70% 60%, #00000010 0, transparent 45%),
+      radial-gradient(circle at 45% 80%, #0000000d 0, transparent 40%),
+      linear-gradient(135deg, #EDEAE2, #DED9CC);
     border:1px solid var(--line);
-    position:relative;
-    opacity:0;
-    animation:rise .6s ease-out forwards;
+    position:relative; overflow:hidden;
   }
-  .layer:nth-child(1){animation-delay:.05s;}
-  .layer:nth-child(2){animation-delay:.15s;}
-  .layer:nth-child(3){animation-delay:.25s;}
-  .layer:nth-child(4){animation-delay:.35s;}
-  .layer:nth-child(5){animation-delay:.45s;}
-  .layer:nth-child(6){animation-delay:.55s;}
-  .layer:nth-child(7){animation-delay:.65s;}
-  .layer:last-child{
-    background:linear-gradient(90deg, var(--surface) 0%, var(--heat-soft) 45%, var(--surface) 55%);
-  }
-  .layer:last-child::after{
-    content:'';
-    position:absolute; top:-3px; width:10px; height:calc(100% + 6px);
-    background:var(--heat);
-    border-radius:50%;
-    filter:blur(1px);
-    animation:tool 3.2s ease-in-out infinite 1.2s;
-    box-shadow:0 0 14px 3px var(--heat-soft);
-  }
-  @keyframes rise{
-    from{opacity:0; transform:translateY(10px);}
-    to{opacity:1; transform:translateY(0);}
-  }
-  @keyframes tool{
-    0%{left:2%;} 50%{left:88%;} 100%{left:2%;}
-  }
-  .stack-label{
-    margin-top:14px;
-    font-size:0.76rem;
-    color:var(--ink-soft);
-    display:flex; justify-content:space-between;
+  .grain::before{
+    content:''; position:absolute; inset:0;
+    background-image: repeating-linear-gradient(115deg, #00000008 0 2px, transparent 2px 14px),
+                       repeating-linear-gradient(25deg, #00000006 0 1px, transparent 1px 18px);
   }
 
-  section{padding:90px 0; border-top:1px solid var(--line);}
-  .section-head{
-    display:flex; align-items:baseline; gap:16px; margin-bottom:44px;
-  }
-  .section-num{
-    font-family:'IBM Plex Mono', monospace;
-    color:var(--heat); font-size:0.85rem;
-  }
-  section h2{
-    font-size:1.7rem; font-weight:600;
-  }
+  .stat-row{display:grid; grid-template-columns:repeat(4,1fr); border-top:1px solid var(--line); border-bottom:1px solid var(--line); margin-top:50px;}
+  .stat-row div{padding:22px 0; text-align:center; border-left:1px solid var(--line);}
+  .stat-row div:first-child{border-left:none;}
+  .stat-row .n{font-family:'Fraunces', serif; font-size:1.9rem; font-weight:600; color:var(--accent); display:block;}
+  .stat-row .l{font-size:.78rem; color:var(--ink-soft); text-transform:uppercase; letter-spacing:.04em;}
 
-  /* ABOUT */
-  .about-grid{
-    display:grid; grid-template-columns:1fr 1fr; gap:56px;
-  }
-  .about-grid p{margin-bottom:16px; color:var(--ink);}
-  .credit{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:0.85rem;
-    color:var(--ink-soft);
-    border-left:2px solid var(--oxide);
-    padding-left:16px;
-    margin-top:24px;
-  }
-  .stat-block{
-    display:grid; grid-template-columns:repeat(2,1fr); gap:1px;
-    background:var(--line);
-    border:1px solid var(--line);
-  }
-  .stat{
-    background:var(--surface); padding:22px;
-  }
-  .stat .n{
-    font-family:'Space Grotesk', sans-serif;
-    font-size:2rem; font-weight:700; color:var(--oxide);
-    display:block;
-  }
-  .stat .l{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:0.75rem; color:var(--ink-soft);
-    text-transform:uppercase; letter-spacing:0.04em;
-  }
+  section{padding:80px 0; border-top:1px solid var(--line);}
+  .section-head{margin-bottom:44px;}
+  .section-head .kicker{margin-bottom:8px;}
+  section h2{font-size:1.6rem; font-weight:500;}
 
-  /* RESEARCH */
-  .research-card{
-    border:1px solid var(--line);
-    background:var(--surface);
-    margin-bottom:24px;
-    padding:36px;
-    display:grid;
-    grid-template-columns:1.4fr 1fr;
-    gap:40px;
-  }
-  .research-card h3{
-    font-size:1.25rem; margin-bottom:12px;
-  }
-  .research-card p{color:var(--ink-soft); margin-bottom:14px;}
-  .tag-row{display:flex; flex-wrap:wrap; gap:8px; margin-top:16px;}
-  .tag{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:0.72rem;
-    border:1px solid var(--line);
-    padding:4px 10px;
-    color:var(--ink-soft);
-  }
-  .readout{
-    border-left:1px solid var(--line);
-    padding-left:32px;
-    display:flex; flex-direction:column; gap:16px; justify-content:center;
-  }
-  .readout .r{
-    display:flex; justify-content:space-between; align-items:baseline;
-    font-family:'IBM Plex Mono', monospace; font-size:0.85rem;
-    border-bottom:1px dotted var(--line); padding-bottom:8px;
-  }
-  .readout .r .v{color:var(--heat); font-weight:500;}
+  .focus-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); border:1px solid var(--line);}
+  .focus-card{background:var(--surface); padding:30px;}
+  .focus-card h3{font-size:1.05rem; font-weight:600; font-family:'Inter',sans-serif; margin-bottom:10px;}
+  .focus-card p{color:var(--ink-soft); font-size:.92rem; margin-bottom:14px;}
+  .tag-row{display:flex; flex-wrap:wrap; gap:6px;}
+  .tag{font-family:'IBM Plex Mono', monospace; font-size:.68rem; border:1px solid var(--line); padding:3px 8px; color:var(--ink-soft);}
+  @media (max-width:780px){ .focus-grid{grid-template-columns:1fr;} }
 
-  /* PUBLICATIONS */
-  .pub-cat{margin-bottom:40px;}
-  .pub-cat h4{
-    font-family:'IBM Plex Mono', monospace;
-    font-size:0.78rem; text-transform:uppercase; letter-spacing:0.08em;
-    color:var(--oxide); margin-bottom:16px;
-  }
   .pub-list{list-style:none;}
-  .pub-list li{
-    padding:16px 0; border-bottom:1px solid var(--line);
-    display:grid; grid-template-columns:32px 1fr; gap:16px;
-  }
-  .pub-list li:first-child{border-top:1px solid var(--line);}
-  .pub-num{font-family:'IBM Plex Mono', monospace; color:var(--ink-soft); font-size:0.85rem;}
-  .pub-title{font-weight:500;}
-  .pub-meta{
-    font-family:'IBM Plex Mono', monospace; font-size:0.78rem; color:var(--ink-soft); margin-top:4px;
-  }
-  .placeholder{color:var(--heat); font-style:italic; font-family:'Source Serif 4', serif;}
+  .pub-item{display:grid; grid-template-columns:56px 1fr; gap:18px; padding:22px 0; border-bottom:1px solid var(--line);}
+  .pub-item:first-child{border-top:1px solid var(--line);}
+  .pub-year{font-family:'IBM Plex Mono', monospace; font-size:.82rem; color:var(--accent);}
+  .pub-title{font-weight:600; margin-bottom:5px; line-height:1.35;}
+  .pub-authors{font-size:.88rem; color:var(--ink-soft); margin-bottom:3px;}
+  .pub-venue{font-family:'IBM Plex Mono', monospace; font-size:.8rem; color:var(--ink-soft);}
+  .cited-badge{display:inline-block; margin-left:8px; font-family:'IBM Plex Mono', monospace; font-size:.72rem; color:var(--accent); border:1px solid var(--line); padding:1px 7px; border-radius:20px;}
+  .more-link{margin-top:24px; font-size:.9rem;}
+  .more-link a{color:var(--accent); text-decoration:underline;}
 
-  /* CONTACT */
-  .contact-grid{
-    display:grid; grid-template-columns:1.2fr 1fr; gap:56px; align-items:start;
-  }
-  .contact-list{list-style:none; margin-top:20px;}
-  .contact-list li{
-    padding:14px 0; border-bottom:1px solid var(--line);
-    display:flex; justify-content:space-between;
-    font-family:'IBM Plex Mono', monospace; font-size:0.9rem;
-  }
-  .contact-list a{text-decoration:none; color:var(--heat);}
-  .contact-list a:hover{text-decoration:underline;}
+  .pat-item{padding:20px 0; border-bottom:1px solid var(--line); display:grid; grid-template-columns:56px 1fr; gap:18px;}
+  .pat-item:first-child{border-top:1px solid var(--line);}
+  .pat-status{font-family:'IBM Plex Mono', monospace; font-size:.75rem; color:var(--ink-soft);}
 
-  footer{
-    border-top:1px solid var(--line);
-    padding:32px 0;
-    font-family:'IBM Plex Mono', monospace;
-    font-size:0.75rem;
-    color:var(--ink-soft);
-    display:flex; justify-content:space-between;
-  }
+  .cv-grid{display:grid; grid-template-columns:1fr 1fr; gap:56px;}
+  .cv-grid h3{font-size:1.05rem; margin-bottom:8px;}
+  .cv-grid .org{color:var(--ink-soft); font-size:.9rem; margin-bottom:14px;}
+  .expertise-list{list-style:none; display:grid; grid-template-columns:1fr 1fr; gap:8px 18px;}
+  .expertise-list li{font-size:.9rem; padding-left:14px; position:relative;}
+  .expertise-list li::before{content:'—'; position:absolute; left:0; color:var(--accent);}
+  @media (max-width:780px){ .cv-grid{grid-template-columns:1fr;} }
 
-  @media (max-width: 820px){
-    .hero-grid, .about-grid, .research-card, .contact-grid{grid-template-columns:1fr;}
-    .research-card .readout{border-left:none; border-top:1px solid var(--line); padding-left:0; padding-top:24px;}
-    nav ul{display:none;}
-    .stack{height:220px;}
-  }
+  .contact-block{text-align:left;}
+  .contact-email{font-family:'Fraunces', serif; font-size:1.3rem; margin:14px 0 22px;}
+  .contact-email a{text-decoration:none; border-bottom:1px solid var(--accent);}
+  .contact-links{display:flex; gap:22px; flex-wrap:wrap; font-size:.9rem;}
+  .contact-links a{text-decoration:underline; color:var(--accent);}
+
+  footer{border-top:1px solid var(--line); padding:30px 0; font-size:.8rem; color:var(--ink-soft); display:flex; justify-content:space-between;}
+  @media (max-width:600px){ footer .wrap{flex-direction:column; gap:6px; display:flex;} }
 </style>
 </head>
 <body>
 
 <nav>
   <div class="wrap">
-    <div class="brand"><span class="mark"></span>P. K. Singh</div>
+    <div class="brand">P. K. Singh</div>
     <ul>
-      <li><a href="#about">About</a></li>
       <li><a href="#research">Research</a></li>
       <li><a href="#publications">Publications</a></li>
       <li><a href="#patents">Patents</a></li>
+      <li><a href="#cv">CV</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </div>
 </nav>
 
 <header class="hero">
-  <div class="wrap hero-grid">
-    <div>
-      <div class="eyebrow">PhD Candidate · Mechanical Engineering · IIT Patna</div>
-      <h1>Prabhakar Kr. Singh — building metal, <em>layer by layer</em>, one solid-state pass at a time.</h1>
-      <p class="lede">My work develops powder bed friction stir (PBFS) additive manufacturing of AZ31B magnesium alloy — a solid-state route to dense, low-defect metal parts — supported by microstructural characterization, mechanical testing, and physics-informed modeling.</p>
-      <div class="hero-cta">
-        <a href="#research" class="btn primary">View research</a>
-        <a href="#contact" class="btn">Get in touch</a>
-      </div>
-    </div>
-    <div>
-      <div class="stack" aria-hidden="true">
-        <div class="layer"></div>
-        <div class="layer"></div>
-        <div class="layer"></div>
-        <div class="layer"></div>
-        <div class="layer"></div>
-        <div class="layer"></div>
-        <div class="layer"></div>
-      </div>
-      <div class="stack-label">
-        <span>build direction ↑</span>
-        <span class="mono">tool pass, layer n</span>
-      </div>
+  <div class="wrap">
+    <div class="kicker">Indian Institute of Technology Patna</div>
+    <h1>Prabhakar Kumar Singh</h1>
+    <div class="role">Researcher — Solid-State Additive Manufacturing</div>
+    <p class="lede">I develop solid-state additive manufacturing routes for lightweight alloys — Powder Bed Friction Stir (PBFS) deposition of magnesium and hybrid friction stir-based additive manufacturing of aluminum. My work spans process development, tool design and thermo-mechanical processing, linking processing to microstructure, mechanical performance and corrosion behaviour.</p>
+    <div class="hero-links"><a href="https://scholar.google.com/citations?user=FwstBLgAAAAJ" target="_blank" rel="noopener">Google Scholar profile →</a></div>
+    <div class="grain" aria-hidden="true"></div>
+    <div class="stat-row">
+      <div><span class="n">78</span><span class="l">Citations</span></div>
+      <div><span class="n">4</span><span class="l">h-index</span></div>
+      <div><span class="n">3</span><span class="l">Patents filed / granted</span></div>
+      <div><span class="n">6+</span><span class="l">Years of research</span></div>
     </div>
   </div>
 </header>
 
-<section id="about">
-  <div class="wrap">
-    <div class="section-head"><span class="section-num">01</span><h2>About</h2></div>
-    <div class="about-grid">
-      <div>
-        <p>I'm a PhD candidate in the Department of Mechanical Engineering at IIT Patna, working at the intersection of solid-state metal processing and computational modeling. My dissertation examines powder bed friction stir additive manufacturing (PBFS-AM) of AZ31B magnesium alloy — a technique that builds parts without melting the feedstock, avoiding the porosity and residual stress problems common to fusion-based additive processes.</p>
-        <p>My research spans microstructural characterization (EBSD, TEM, XCT, XRD), mechanical and corrosion testing, residual stress analysis, and computational modeling using physics-informed neural networks (PINNs) and ABAQUS finite element simulation.</p>
-        <div class="credit">Advised by Dr. Probir Saha, IIT Patna</div>
-      </div>
-      <div class="stat-block">
-        <div class="stat"><span class="n">3</span><span class="l">First-author SCI papers</span></div>
-        <div class="stat"><span class="n">2</span><span class="l">Co-authored SCI papers</span></div>
-        <div class="stat"><span class="n">1</span><span class="l">Book chapter</span></div>
-        <div class="stat"><span class="n">5</span><span class="l">Conference presentations</span></div>
-        <div class="stat"><span class="n">3</span><span class="l">Patents filed</span></div>
-        <div class="stat"><span class="n">0.04%</span><span class="l">Min. PBFS porosity achieved</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section id="research">
   <div class="wrap">
-    <div class="section-head"><span class="section-num">02</span><h2>Research</h2></div>
-
-    <div class="research-card">
-      <div>
-        <h3>Powder Bed Friction Stir Additive Manufacturing of AZ31B</h3>
-        <p>A solid-state additive process that consolidates magnesium powder feedstock through friction and severe plastic deformation rather than melting — targeting dense, low-porosity, low-residual-stress builds suitable for lightweight structural and biomedical applications.</p>
-        <div class="tag-row">
-          <span class="tag">Solid-state processing</span>
-          <span class="tag">AZ31B Mg alloy</span>
-          <span class="tag">DDRX microstructure</span>
-          <span class="tag">EBSD / TEM / XCT / XRD</span>
-        </div>
+    <div class="section-head"><div class="kicker">Research</div><h2>Focus areas</h2></div>
+    <div class="focus-grid">
+      <div class="focus-card">
+        <h3>Powder Bed Friction Stir (PBFS) of Mg alloys</h3>
+        <p>A novel solid-state route for AZ31B deposition: tool feature and parameter selection, through-thickness property gradients, and substantially improved corrosion resistance over conventional routes.</p>
+        <div class="tag-row"><span class="tag">AZ31B</span><span class="tag">Process development</span><span class="tag">Corrosion</span></div>
       </div>
-      <div class="readout">
-        <div class="r"><span>Porosity</span><span class="v">0.04–0.06%</span></div>
-        <div class="r"><span>Tensile strength</span><span class="v">up to 245 MPa</span></div>
-        <div class="r"><span>Residual stress</span><span class="v">21–29 MPa</span></div>
+      <div class="focus-card">
+        <h3>Hybrid friction stir additive manufacturing of Al alloys</h3>
+        <p>Powder-based additive friction stir deposition on a vertical milling platform — friction-stirring pitch, feeding strategy and print-location effects on microstructure and microhardness.</p>
+        <div class="tag-row"><span class="tag">Aluminium</span><span class="tag">Tool design</span><span class="tag">Hybrid AM</span></div>
       </div>
-    </div>
-
-    <div class="research-card">
-      <div>
-        <h3>Layer-Wise State-Evolution PINN Framework</h3>
-        <p>A physics-informed neural network framework that models process-state evolution layer by layer through a PBFS-AM build, coupling governing thermomechanical physics with data-driven learning to predict microstructural and mechanical outcomes without full-scale finite element simulation at every layer.</p>
-        <div class="tag-row">
-          <span class="tag">Physics-informed ML</span>
-          <span class="tag">Process modeling</span>
-          <span class="tag">ABAQUS FE simulation</span>
-        </div>
-      </div>
-      <div class="readout">
-        <div class="r"><span>Scope</span><span class="v">Layer-resolved</span></div>
-        <div class="r"><span>Coupling</span><span class="v">Physics + data</span></div>
+      <div class="focus-card">
+        <h3>Characterisation & thermo-mechanical analysis</h3>
+        <p>FE-SEM, EBSD, TEM, XCT, XRD, residual stress and corrosion analysis, combined with thermal-history monitoring and MATLAB-based XCT quantification of defects.</p>
+        <div class="tag-row"><span class="tag">EBSD</span><span class="tag">XCT + MATLAB</span><span class="tag">Residual stress</span></div>
       </div>
     </div>
   </div>
@@ -423,73 +175,154 @@
 
 <section id="publications">
   <div class="wrap">
-    <div class="section-head"><span class="section-num">03</span><h2>Publications</h2></div>
-
-    <div class="pub-cat">
-      <h4>Journal Articles</h4>
-      <ul class="pub-list">
-        <li><span class="pub-num">01</span><div><div class="pub-title placeholder">[Add first-author paper title]</div><div class="pub-meta">[Journal name, year, DOI]</div></div></li>
-        <li><span class="pub-num">02</span><div><div class="pub-title placeholder">[Add first-author paper title]</div><div class="pub-meta">[Journal name, year, DOI]</div></div></li>
-        <li><span class="pub-num">03</span><div><div class="pub-title placeholder">[Add first-author paper title]</div><div class="pub-meta">[Journal name, year, DOI]</div></div></li>
-        <li><span class="pub-num">04</span><div><div class="pub-title placeholder">[Add co-authored paper title]</div><div class="pub-meta">[Journal name, year, DOI]</div></div></li>
-        <li><span class="pub-num">05</span><div><div class="pub-title placeholder">[Add co-authored paper title]</div><div class="pub-meta">[Journal name, year, DOI]</div></div></li>
-      </ul>
-    </div>
-
-    <div class="pub-cat">
-      <h4>Book Chapter</h4>
-      <ul class="pub-list">
-        <li><span class="pub-num">01</span><div><div class="pub-title placeholder">[Add book chapter title]</div><div class="pub-meta">[Book title, publisher, year]</div></div></li>
-      </ul>
-    </div>
-
-    <div class="pub-cat">
-      <h4>Conference Presentations</h4>
-      <ul class="pub-list">
-        <li><span class="pub-num">01</span><div><div class="pub-title placeholder">[Add conference presentation title]</div><div class="pub-meta">[Conference, location, year]</div></div></li>
-        <li><span class="pub-num">02</span><div><div class="pub-title placeholder">[Add conference presentation title]</div><div class="pub-meta">[Conference, location, year]</div></div></li>
-      </ul>
-      <p style="margin-top:12px; font-size:0.85rem; color:var(--ink-soft);">+ 3 more — add as needed.</p>
-    </div>
+    <div class="section-head"><div class="kicker">Publications</div><h2>Peer-reviewed work</h2></div>
+    <ul class="pub-list">
+      <li class="pub-item">
+        <span class="pub-year mono">2026</span>
+        <div>
+          <div class="pub-title">Developing and investigating the through-thickness attributes of AZ31B deposit fabricated via powder bed friction stir (PBFS) additive manufacturing process<span class="cited-badge">1 cited</span></div>
+          <div class="pub-authors">P. K. Singh, P. Saha, D. Kumar, S. K. Pal</div>
+          <div class="pub-venue">Journal of Alloys and Compounds, 186789</div>
+        </div>
+      </li>
+      <li class="pub-item">
+        <span class="pub-year mono">2026</span>
+        <div>
+          <div class="pub-title">Effect of feeding strategy on the microstructure and microhardness in friction stir-based additive manufacturing of aluminum alloy powder</div>
+          <div class="pub-authors">A. Mukhopadhyay, P. K. Singh, P. Saha</div>
+          <div class="pub-venue">Journal of Manufacturing Science and Engineering 148(1), 014501</div>
+        </div>
+      </li>
+      <li class="pub-item">
+        <span class="pub-year mono">2025</span>
+        <div>
+          <div class="pub-title">Development and improving the corrosion resistance of the magnesium alloy using a powder bed friction stir (PBFS) additive manufacturing process<span class="cited-badge">8 cited</span></div>
+          <div class="pub-authors">P. K. Singh, P. Saha, A. Mukhopadhyay, A. K. Keshri</div>
+          <div class="pub-venue">Journal of Alloys and Compounds 1021, 179693</div>
+        </div>
+      </li>
+      <li class="pub-item">
+        <span class="pub-year mono">2025</span>
+        <div>
+          <div class="pub-title">Optimizing heat utilization in dissimilar micro-friction stir welding of AA 2024-T3 / AA 6061-T6 using dual backing plate<span class="cited-badge">14 cited</span></div>
+          <div class="pub-authors">M. Verma, P. Saha, P. K. Singh</div>
+          <div class="pub-venue">Journal of Manufacturing Processes 149, 98–115</div>
+        </div>
+      </li>
+      <li class="pub-item">
+        <span class="pub-year mono">2025</span>
+        <div>
+          <div class="pub-title">Microstructural characterization of AZ31B deposit made by novel PBFS process</div>
+          <div class="pub-authors">P. K. Singh, A. Mukhopadhyay, P. Saha</div>
+          <div class="pub-venue">Advances in Additive Manufacturing Vol. II, 243–250</div>
+        </div>
+      </li>
+      <li class="pub-item">
+        <span class="pub-year mono">2023</span>
+        <div>
+          <div class="pub-title">Development and analysis of a powder bed friction stir (PBFS) additive manufacturing process for aluminum alloys: friction-stirring pitch (ω/v) and print location<span class="cited-badge">44 cited</span></div>
+          <div class="pub-authors">A. Mukhopadhyay, P. Saha, P. K. Singh, M. Verma</div>
+          <div class="pub-venue">Additive Manufacturing 72, 103618</div>
+        </div>
+      </li>
+      <li class="pub-item">
+        <span class="pub-year mono">2023</span>
+        <div>
+          <div class="pub-title">Feasibility study of AZ31B deposition made by novel powder bed friction stir process with optimal process parameters and tool features<span class="cited-badge">10 cited</span></div>
+          <div class="pub-authors">P. K. Singh, A. Mukhopadhyay, M. Verma, P. Saha</div>
+          <div class="pub-venue">Materials Today: Proceedings</div>
+        </div>
+      </li>
+      <li class="pub-item">
+        <span class="pub-year mono">2023</span>
+        <div>
+          <div class="pub-title">Experimental investigation of novel powder bed friction stir process for AZ31B Mg alloy<span class="cited-badge">1 cited</span></div>
+          <div class="pub-authors">P. K. Singh, A. Mukhopadhyay, P. Saha</div>
+          <div class="pub-venue">Manufacturing Technology Today 22(1), 57–62</div>
+        </div>
+      </li>
+    </ul>
+    <div class="more-link"><a href="https://scholar.google.com/citations?user=FwstBLgAAAAJ" target="_blank" rel="noopener">Full list on Google Scholar →</a></div>
   </div>
 </section>
 
 <section id="patents">
   <div class="wrap">
-    <div class="section-head"><span class="section-num">04</span><h2>Patents</h2></div>
+    <div class="section-head"><div class="kicker">Patents</div><h2>Filed & granted</h2></div>
     <ul class="pub-list">
-      <li><span class="pub-num">01</span><div><div class="pub-title placeholder">[Add patent title]</div><div class="pub-meta">[Application/grant number, status, year]</div></div></li>
-      <li><span class="pub-num">02</span><div><div class="pub-title placeholder">[Add patent title]</div><div class="pub-meta">[Application/grant number, status, year]</div></div></li>
-      <li><span class="pub-num">03</span><div><div class="pub-title placeholder">[Add patent title]</div><div class="pub-meta">[Application/grant number, status, year]</div></div></li>
+      <li class="pat-item">
+        <span class="pub-year mono">2024</span>
+        <div>
+          <div class="pub-title">A friction stir additive method for fabricating deposits from powder for implants</div>
+          <div class="pat-status">IN Patent 547,245 — Granted</div>
+        </div>
+      </li>
+      <li class="pat-item">
+        <span class="pub-year mono">2024</span>
+        <div>
+          <div class="pub-title">A system for hybrid powder-based additive friction stir deposition vertical milling machine and a method thereof</div>
+          <div class="pat-status">IN Patent App. 202,431,059,508</div>
+        </div>
+      </li>
+      <li class="pat-item">
+        <span class="pub-year mono">2025</span>
+        <div>
+          <div class="pub-title">An apparatus and method for fabrication of spur gears</div>
+          <div class="pat-status">IN Patent App. 202,531,082,950</div>
+        </div>
+      </li>
     </ul>
   </div>
 </section>
 
-<section id="contact">
-  <div class="wrap contact-grid">
-    <div>
-      <div class="section-head"><span class="section-num">05</span><h2>Contact</h2></div>
-      <p>Open to postdoctoral opportunities in solid-state additive manufacturing, magnesium alloy processing, and physics-informed process modeling. Reach out via email or LinkedIn.</p>
+<section id="cv">
+  <div class="wrap">
+    <div class="section-head"><div class="kicker">CV</div><h2>Experience & expertise</h2></div>
+    <div class="cv-grid">
+      <div>
+        <h3>Doctoral Researcher, Mechanical Engineering</h3>
+        <div class="org">Indian Institute of Technology Patna</div>
+        <p style="color:var(--ink-soft); font-size:.92rem;">Six-plus years of research on lightweight alloy processing, physical metallurgy and corrosion, including the design and commissioning of powder bed friction stir additive manufacturing setups.</p>
+      </div>
+      <div>
+        <h3>Technical expertise</h3>
+        <ul class="expertise-list">
+          <li>PBFS additive manufacturing</li>
+          <li>Friction stir welding & processing</li>
+          <li>Physical metallurgy of Mg / Al alloys</li>
+          <li>Tool design & process development</li>
+          <li>FE-SEM · EBSD · TEM</li>
+          <li>X-ray computed tomography (XCT)</li>
+          <li>XRD & residual stress measurement</li>
+          <li>Electrochemical corrosion analysis</li>
+          <li>Thermal-history monitoring</li>
+          <li>MATLAB image/data analysis</li>
+        </ul>
+      </div>
     </div>
-    <ul class="contact-list">
-      <li><span>Email</span><a href="mailto:your.email@example.com" class="placeholder">[add email]</a></li>
-      <li><span>LinkedIn</span><a href="#" class="placeholder">[add link]</a></li>
-      <li><span>Google Scholar</span><a href="#" class="placeholder">[add link]</a></li>
-      <li><span>ORCID</span><a href="#" class="placeholder">[add link]</a></li>
-      <li><span>Institution</span><span>IIT Patna</span></li>
-    </ul>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap contact-block">
+    <div class="section-head"><div class="kicker">Contact</div><h2>Open to collaborations in solid-state additive manufacturing.</h2></div>
+    <div class="contact-email"><a href="mailto:prabhakar_1921me14@iitp.ac.in">prabhakar_1921me14@iitp.ac.in</a></div>
+    <div class="contact-links">
+      <a href="https://scholar.google.com/citations?user=FwstBLgAAAAJ" target="_blank" rel="noopener">Google Scholar</a>
+      <a href="https://www.linkedin.com/in/prabhakar-kr-singh-1a911bb5/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.researchgate.net/profile/Prabhakar-Singh-10" target="_blank" rel="noopener">ResearchGate</a>
+      <a href="https://youtu.be/_W5eGAWvjfQ" target="_blank" rel="noopener">YouTube</a>
+    </div>
   </div>
 </section>
 
 <footer>
   <div class="wrap" style="display:flex; justify-content:space-between; width:100%;">
-    <span>© <span id="year"></span> Prabhakar Kr. Singh</span>
+    <span>© <span id="year"></span> Prabhakar Kumar Singh</span>
     <span>Mechanical Engineering · IIT Patna</span>
   </div>
 </footer>
 
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-</script>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
