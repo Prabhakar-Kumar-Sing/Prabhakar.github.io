@@ -61,9 +61,10 @@
   @media (max-width:780px){ .hero-top{grid-template-columns:1fr;} .portrait{width:140px; height:140px;} }
 
   .video-frame{
-    position:relative; width:100%; padding-top:56.25%; border:1px solid var(--line); background:var(--surface); overflow:hidden;
+    position:relative; width:100%; padding-top:42%; border:1px solid var(--line); background:#111; overflow:hidden;
+    margin-top:40px;
   }
-  .video-frame iframe{position:absolute; inset:0; width:100%; height:100%; border:0;}
+  .video-frame video{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block;}
 
   .grain{
     width:100%; height:220px; margin-top:40px; border-radius:2px;
@@ -140,7 +141,6 @@
     <div class="brand">P. K. Singh</div>
     <ul>
       <li><a href="#research">Research</a></li>
-      <li><a href="#experiment">Video</a></li>
       <li><a href="#publications">Publications</a></li>
       <li><a href="#patents">Patents</a></li>
       <li><a href="#cv">CV</a></li>
@@ -160,11 +160,14 @@
         <div class="hero-links"><a href="https://scholar.google.com/citations?user=FwstBLgAAAAJ" target="_blank" rel="noopener">Google Scholar profile →</a></div>
       </div>
       <div class="portrait">
-        <!-- Replace src below with your photo filename once uploaded, e.g. <img src="profile.jpg" alt="Prabhakar Kumar Singh"> -->
-        <div class="placeholder-text">[Add your photo here — see README]</div>
+        <img src="profile.jpg" alt="Prabhakar Kumar Singh">
       </div>
     </div>
-    <div class="grain" aria-hidden="true"></div>
+    <div class="video-frame hero-video" aria-hidden="false">
+      <video autoplay muted loop playsinline preload="auto">
+        <source src="experiment.mp4" type="video/mp4">
+      </video>
+    </div>
     <div class="stat-row">
       <div><span class="n">78</span><span class="l">Citations</span></div>
       <div><span class="n">4</span><span class="l">h-index</span></div>
@@ -193,15 +196,6 @@
         <p>FE-SEM, EBSD, TEM, XCT, XRD, residual stress and corrosion analysis, combined with thermal-history monitoring and MATLAB-based XCT quantification of defects.</p>
         <div class="tag-row"><span class="tag">EBSD</span><span class="tag">XCT + MATLAB</span><span class="tag">Residual stress</span></div>
       </div>
-    </div>
-  </div>
-</section>
-
-<section id="experiment">
-  <div class="wrap">
-    <div class="section-head"><div class="kicker">In the lab</div><h2>PBFS process in action</h2></div>
-    <div class="video-frame">
-      <iframe src="https://www.youtube.com/embed/_W5eGAWvjfQ" title="PBFS additive manufacturing process demonstration" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
     </div>
   </div>
 </section>
